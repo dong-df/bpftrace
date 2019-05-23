@@ -128,6 +128,7 @@ ENVIRONMENT:
     BPFTRACE_STRLEN           [default: 64] bytes on BPF stack per str()
     BPFTRACE_NO_CPP_DEMANGLE  [default: 0] disable C++ symbol demangling
     BPFTRACE_MAP_KEYS_MAX     [default: 4096] max keys in a map
+    BPFTRACE_MAX_PROBES       [default: 512] max number of probes bpftrace can attach to
 
 EXAMPLES:
 bpftrace -l '*sleep*'
@@ -389,6 +390,12 @@ This feature can be turned off by setting the value of this environment variable
 Default: 4096
 
 This is the maximum number of keys that can be stored in a map. Increasing the value will consume more memory and increase startup times. There are some cases where you will want to: for example, sampling stack traces, recording timestamps for each page, etc.
+
+### 8.4 `BPFTRACE_MAX_PROBES`
+
+Default: 512
+
+This is the maximum number of probes that bpftrace can attach to. Increasing the value will consume more memory, increase startup times and can incur high performance overhead or even freeze or crash the system.
 
 # Language
 
