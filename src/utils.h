@@ -60,7 +60,7 @@ static std::vector<std::string> UNSAFE_BUILTIN_FUNCS =
   "system",
 };
 
-
+std::string get_pid_exe(pid_t pid);
 bool has_wildcard(const std::string &str);
 std::vector<std::string> split_string(const std::string &str, char delimiter);
 bool wildcard_match(const std::string &str, std::vector<std::string> &tokens, bool start_wildcard, bool end_wildcard);
